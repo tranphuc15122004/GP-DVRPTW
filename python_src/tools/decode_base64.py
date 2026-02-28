@@ -9,7 +9,7 @@ readable expressions.
 """
 import sys
 from python_src.gp.GPtree import Program
-from sim import ctx as sim_ctx
+from python_src.sim import ctx as sim_ctx
 
 if len(sys.argv) < 3:
     print("usage: decode_base64.py <routing_base64> <sequencing_base64>")

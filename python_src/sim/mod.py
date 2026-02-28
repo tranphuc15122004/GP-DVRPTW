@@ -20,7 +20,7 @@ from typing import List, Dict, Tuple, Optional
 
 from python_src.gp.GPtree import Program
 from python_src.sim.problem import Problem
-from sim.ctx import RoutingContext, SequencingContext
+from python_src.sim.ctx import RoutingContext, SequencingContext
 
 
 class Event:

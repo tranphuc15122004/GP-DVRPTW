@@ -31,6 +31,9 @@ from dotenv import load_dotenv, find_dotenv
 
 HERE = os.path.dirname(__file__)
 
+# Repo root (parent of `python_src/`). Needed for `import python_src.*`.
+PROJECT_ROOT = os.path.abspath(os.path.join(HERE, os.pardir))
+
 
 dotenv_path = find_dotenv()
 if not dotenv_path:
@@ -41,7 +44,15 @@ if dotenv_path:
     load_dotenv(dotenv_path)
 
 
-# Ensure `python_src` is on the import path so package-style imports work.
+# Ensure imports work whether executed as:
+#   - `python -m python_src.main ...` (from repo root)
+#   - `python python_src/main.py ...`
+#   - `python ./main.py ...` (from within python_src/)
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+# Some modules historically use `import sim.*` (without the `python_src.` prefix).
+# Keeping `python_src/` itself on the path preserves compatibility.
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
@@ -257,9 +268,23 @@ def main():
         print("usage: python main.py [problem path]")
         sys.exit(1)
     path = sys.argv[1]
+    if not os.path.exists(path):
+        # Common invocation: run from within `python_src/` and pass a path like
+        # `datasets/...` which actually lives at the repo root.
+        alt = os.path.join(PROJECT_ROOT, path)
+        if os.path.exists(alt):
+            path = alt
     problem = problem_mod.Problem.load(path, 1.0, 1300.0, 10)
 
     log_mod.log(MAIN, "start")
+
+    if not HEU.enabled() and not GP.enabled():
+        print(
+            "Nothing to do: both HEU and GP are disabled. "
+            "Set LOG_HEU=stdout and/or LOG_GP=stdout (in .env or env vars) to run."
+        )
+        return
+
     if HEU.enabled():
         log_mod.log(MAIN, "heu_start")
         heuristics(problem)
