@@ -93,10 +93,8 @@ STRESS_FACTOR = float(os.environ.get("STRESS_FACTOR", "1.0"))
 
 
 def fitness(problem, result):
-    distance, num_fail = result
-    tot_dist = problem.truck_speed * problem.depot.close * float(problem.num_trucks)
-    weight = WEIGHT
-    return distance / tot_dist * weight + (float(num_fail) / float(len(problem.requests))) * (1.0 - weight)
+    distance, pending, total_late = result
+    return distance + LATE_WEIGHT * total_late + PENDING_WEIGHT * float(pending)
 
 
 def heuristics(problem):
@@ -119,7 +117,7 @@ def heuristics(problem):
         WIQ = gp_program.Program.terminal(1)
 
     for name, r, s in [("C+C", CR, CS), ("C+W", CR, W), ("WIQ+C", WIQ, CS)]:
-        simulation = sim_mod.Simulation(problem, r, s)
+        simulation = sim_mod.soft_Simulation2(problem, r, s)
         result = simulation.simulate_until(problem.depot.close / NUM_TIME_SLOT, float("inf"))
         log_mod.log(HEU, "heuristic_result", name=name, result=result, fitness=fitness(problem, result))
 
@@ -164,21 +162,21 @@ class Individual:
             return self.result[2]
         cache_key = f"{self.routing}:{self.sequencing}"
         if cache_key in cache:
-            dist, nb_fail, fit = cache[cache_key]
+            dist, pending, total_late, fit = cache[cache_key]
         else:
-            sim = sim_mod.Simulation(problem, self.routing, self.sequencing)
+            sim = sim_mod.soft_Simulation2(problem, self.routing, self.sequencing)
             
-            dist, nb_fail = sim.simulate_until(time_slot, float("inf"))
-            fit = fitness(problem, (dist, nb_fail))
-            cache[cache_key] = (dist, nb_fail, fit)
-        self.result = (dist, nb_fail, fit)
+            dist, pending, total_late = sim.simulate_until(time_slot, float("inf"))
+            fit = fitness(problem, (dist, pending, total_late))
+            cache[cache_key] = (dist, pending, total_late, fit)
+        self.result = (dist, pending, total_late, fit)
         return fit
 
 
 def select_parent(gpc, pop):
     # sample 8 and pick best by fitness
     idxs = random.sample(range(len(pop)), k=min(8, len(pop)))
-    best = max(idxs, key=lambda i: pop[i].result[2])
+    best = min(idxs, key=lambda i: pop[i].result[3])
     return best
 
 
@@ -219,14 +217,14 @@ def gp(problem : problem_mod.Problem):
         for ind in pop:
             ind.evaluate(cache, training_problem, train_time_slot)
 
-        pop.sort(key=lambda i: i.result[2])
+        pop.sort(key=lambda i: i.result[3])
         pop = pop[:gpc.num_population]
         result = pop[0].result
 
-        log_mod.log(GP, "new_gen", gen=gen, result=(result[0], result[1]), fitness=result[2], routing=str(pop[0].routing), sequencing=str(pop[0].sequencing))
+        log_mod.log(GP, "new_gen", gen=gen, result=(result[0], result[1], result[2]), fitness=result[3], routing=str(pop[0].routing), sequencing=str(pop[0].sequencing))
         
         # tính toán fittness trên toàn bộ dữ liệu cho cá thể tốt nhất
-        sim = sim_mod.Simulation(problem, pop[0].routing, pop[0].sequencing)
+        sim = sim_mod.soft_Simulation2(problem, pop[0].routing, pop[0].sequencing)
         
         full_result = sim.simulate_until(time_slot, float("inf"))
         log_mod.log(GP, "full_result", result=full_result, fitness=fitness(problem, full_result))

@@ -14,7 +14,7 @@ Notes:
 """
 from __future__ import annotations
 
-from typing import List
+from typing import List, Optional
 import csv
 import torch
 from problems._data_dtw import DVRPTW_Dataset 
@@ -42,7 +42,58 @@ class Problem:
         self.num_trucks = (num_trucks)
 
     @staticmethod
-    def load(csv_path: str, truck_speed: float, truck_capacity: float, num_trucks: int) -> "Problem":
+    def _normalize_like_dtw(
+        depot: Request,
+        requests: List[Request],
+        truck_speed: float,
+        truck_capacity: float,
+    ) -> tuple[float, float]:
+        loc_values: List[float] = [depot.x, depot.y]
+        for req in requests:
+            loc_values.extend([req.x, req.y])
+
+        loc_max = max(loc_values)
+        loc_min = min(loc_values)
+        loc_scl = loc_max - loc_min
+        t_scl = depot.close
+
+        if loc_scl > 0.0:
+            depot.x = (depot.x - loc_min) / loc_scl
+            depot.y = (depot.y - loc_min) / loc_scl
+            for req in requests:
+                req.x = (req.x - loc_min) / loc_scl
+                req.y = (req.y - loc_min) / loc_scl
+
+        if truck_capacity > 0.0:
+            for req in requests:
+                req.demand /= truck_capacity
+            truck_capacity = 1.0
+
+        if t_scl > 0.0:
+            depot.open /= t_scl
+            depot.close /= t_scl
+            depot.service_time /= t_scl
+            depot.time /= t_scl
+
+            for req in requests:
+                req.open /= t_scl
+                req.close /= t_scl
+                req.service_time /= t_scl
+                req.time /= t_scl
+
+        if loc_scl > 0.0 and t_scl > 0.0:
+            truck_speed = truck_speed * t_scl / loc_scl
+
+        return truck_speed, truck_capacity
+
+    @staticmethod
+    def load(
+        csv_path: str,
+        truck_speed: float,
+        truck_capacity: float,
+        num_trucks: int,
+        normalize_inputs: bool = True,
+    ) -> "Problem":
         requests: List[Request] = []
         with open(csv_path, newline='') as fh:
             reader = csv.reader(fh)
@@ -71,10 +122,24 @@ class Problem:
         if not requests:
             raise ValueError("no requests found in CSV")
         depot = requests.pop(0)
+        if normalize_inputs:
+            truck_speed, truck_capacity = Problem._normalize_like_dtw(
+                depot,
+                requests,
+                truck_speed,
+                truck_capacity,
+            )
         return Problem(depot, requests, truck_speed, truck_capacity, num_trucks)
     
     @staticmethod
-    def tensor_load(tensor_load: str, instance_num: int = 0, truck_speed: float = 1.0, truck_capacity: float = 1.0, num_trucks: int = 1) -> "Problem":
+    def tensor_load(
+        tensor_load: str,
+        instance_num: int = 0,
+        truck_speed: Optional[float] = None,
+        truck_capacity: float = 1.0,
+        num_trucks: int = 1,
+        normalize_inputs: bool = True,
+    ) -> "Problem":
         # Load a dataset saved by the tools/data pipeline (torch file)
         torch.serialization.add_safe_globals([DVRPTW_Dataset])
         ds = torch.load(tensor_load, weights_only=False)
@@ -86,6 +151,15 @@ class Problem:
             nodes = ds.nodes
         else:
             raise ValueError("dataset does not contain 'nodes' tensor")
+
+        # Prefer dataset speed if caller did not provide one.
+        if truck_speed is None:
+            if isinstance(ds, dict) and 'veh_speed' in ds:
+                truck_speed = float(ds['veh_speed'])
+            elif hasattr(ds, 'veh_speed'):
+                truck_speed = float(ds.veh_speed)
+            else:
+                truck_speed = 1.0
 
         # If nodes has a batch dimension, select the requested scenario
         if nodes.dim() == 3:
@@ -103,7 +177,7 @@ class Problem:
         depot_row = inst[0]
         depot_x = float(depot_row[0].item()) if feat >= 1 else 0.0
         depot_y = float(depot_row[1].item()) if feat >= 2 else 0.0
-        depot_close = float(depot_row[4].item()) if feat >= 5 else float(0.0)
+        depot_close = float(depot_row[4].item()) if feat >= 5 else 0.0
         depot = Request(idx=0, x=depot_x, y=depot_y, demand=0.0, open=0.0, close=depot_close, service_time=0.0, time=0.0)
 
         requests: List[Request] = []
@@ -119,6 +193,14 @@ class Problem:
 
             req = Request(idx=j, x=x, y=y, demand=demand, open=open_t, close=close_t, service_time=service_time, time=time)
             requests.append(req)
+
+        if normalize_inputs:
+            truck_speed, truck_capacity = Problem._normalize_like_dtw(
+                depot,
+                requests,
+                truck_speed,
+                truck_capacity,
+            )
 
         #requests.sort(key=lambda x: x.time)
         return Problem(depot, requests, truck_speed, truck_capacity, num_trucks)

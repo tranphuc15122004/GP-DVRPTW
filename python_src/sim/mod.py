@@ -421,7 +421,6 @@ class soft_Simulation2:
             self._push_event(ev)
 
         total_distance = 0.0
-        total_failed = 0
         total_delay = 0.0
         while self._events:
             # process all events (no time_max cutoff to ensure all requests are handled)
@@ -430,18 +429,15 @@ class soft_Simulation2:
             self.time = ev.time()
             if ev.kind == "requests":
                 for request in ev.payload:
-                    total_failed_container = [total_failed]
                     total_delay_container = [total_delay]
-                    self.handle_request(request, lambda: None, total_failed_container, total_delay_container)
-                    total_failed = total_failed_container[0]
+                    self.handle_request(request, lambda: None, total_delay_container)
                     total_delay = total_delay_container[0]
             elif ev.kind == "vehicle_finish":
                 vehicle, request = ev.payload
                 self.handle_vehicle_finish(vehicle, request)
 
             for vehicle_idx in range(self.problem.num_trucks):
-                self.update_vehicle_queue(vehicle_idx, lambda: None, total_failed_container := [total_failed], total_distance_container := [total_distance], total_delay_container := [total_delay])
-                total_failed = total_failed_container[0]
+                self.update_vehicle_queue(vehicle_idx, lambda: None, total_distance_container := [total_distance], total_delay_container := [total_delay])
                 total_distance = total_distance_container[0]
                 total_delay = total_delay_container[0]
 
@@ -470,8 +466,7 @@ class soft_Simulation2:
             
             for vehicle_idx in range(self.problem.num_trucks):
                 if self.vehicles[vehicle_idx].queue:
-                    self.update_vehicle_queue(vehicle_idx, lambda: None, total_failed_container := [total_failed], total_distance_container := [total_distance], total_delay_container := [total_delay])
-                    total_failed = total_failed_container[0]
+                    self.update_vehicle_queue(vehicle_idx, lambda: None, total_distance_container := [total_distance], total_delay_container := [total_delay])
                     total_distance = total_distance_container[0]
                     total_delay = total_delay_container[0]
                     any_processed = True
@@ -485,26 +480,16 @@ class soft_Simulation2:
             self.route_vehicle_to(vehicle, self.problem.depot, lambda d: None, total_distance_container := [total_distance])
             total_distance = total_distance_container[0]
 
-        # verify all requests were served
-        total_served = sum(len(v.route) - 1 for v in self.vehicles)  # -1 to exclude depot
-        total_requests = len(self.problem.requests)
-        
-        if total_served < total_requests:
-            # some requests were not served - they might still be in queues
-            unserved = total_requests - total_served
-            print(f"WARNING: {unserved} requests were not served (total_served={total_served}, total_requests={total_requests})")
-            # count requests still in queues
-            queued = sum(len(v.queue) for v in self.vehicles)
-            if queued > 0:
-                print(f"  {queued} requests still in vehicle queues")
-                for i, v in enumerate(self.vehicles):
-                    if v.queue:
-                        print(f"    Vehicle {i}: {len(v.queue)} queued requests")
+        served_ids = set()
+        for vehicle in self.vehicles:
+            for request_id in vehicle.route.values():
+                if request_id != 0:
+                    served_ids.add(request_id)
 
-        # log routes (kept minimal here)
-        return total_distance, total_failed, total_delay
+        pending = max(0, len(self.problem.requests) - len(served_ids))
+        return total_distance, pending, total_delay
 
-    def handle_request(self, request, _cb=None, total_failed_container=None, total_delay_container=None):
+    def handle_request(self, request, _cb=None, total_delay_container=None):
         vehicle = self.routing_rule_route_request(self.problem, self.time, self.vehicles, request)
         if vehicle is not None:
             self.vehicles[vehicle].enqueue(request, self.time)
@@ -517,7 +502,7 @@ class soft_Simulation2:
         # placeholder for logging
         return
 
-    def update_vehicle_queue(self, vehicle: int, _cb, total_failed_container: List[int], total_distance_container: List[float], total_delay_container: List[float]) -> None:
+    def update_vehicle_queue(self, vehicle: int, _cb, total_distance_container: List[float], total_delay_container: List[float]) -> None:
         state = self.vehicles[vehicle]
         if self.time < state.busy_until:
             return
