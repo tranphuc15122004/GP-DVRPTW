@@ -393,6 +393,11 @@ class soft_Simulation2:
         self.sequencing_rule = sequencing_rule
         self.time: float = 0.0
         self.vehicles: List[VehicleState] = [VehicleState(problem) for _ in range(problem.num_trucks)]
+        # One-tour constraint state per vehicle:
+        # - has_departed_once: vehicle has left depot to serve at least one customer.
+        # - completed_single_tour: vehicle has returned to depot after departure and is locked.
+        self.has_departed_once: List[bool] = [False for _ in range(problem.num_trucks)]
+        self.completed_single_tour: List[bool] = [False for _ in range(problem.num_trucks)]
         self._events: List[Tuple[float, int, Event]] = []
         self._counter = 0
         
@@ -494,15 +499,20 @@ class soft_Simulation2:
         if vehicle is not None:
             self.vehicles[vehicle].enqueue(request, self.time)
         else:
-            # This should NOT happen after routing_rule fix - force assign to vehicle 0
-            print(f"ERROR: routing_rule returned None for request {request.idx} at time {self.time}, forcing to vehicle 0")
-            self.vehicles[0].enqueue(request, self.time)
+            # No available vehicle under one-tour constraint: keep as unserved.
+            print(f"WARNING: no available vehicle for request {request.idx} at time {self.time}; request stays pending")
 
     def handle_vehicle_finish(self, vehicle: int, request) -> None:
         # placeholder for logging
         return
 
     def update_vehicle_queue(self, vehicle: int, _cb, total_distance_container: List[float], total_delay_container: List[float]) -> None:
+        if self.completed_single_tour[vehicle]:
+            state = self.vehicles[vehicle]
+            if state.queue:
+                state.queue.clear()
+            return
+
         state = self.vehicles[vehicle]
         if self.time < state.busy_until:
             return
@@ -533,6 +543,16 @@ class soft_Simulation2:
 
     def route_vehicle_to(self, vehicle: int, request, _cb, total_distance_container: List[float]) -> None:
         state = self.vehicles[vehicle]
+        if self.completed_single_tour[vehicle] and getattr(request, "idx", 0) != 0:
+            return
+
+        from_depot = getattr(state.cur_request, "idx", 0) == 0
+        to_depot = getattr(request, "idx", 0) == 0
+        if from_depot and not to_depot:
+            if self.completed_single_tour[vehicle]:
+                return
+            self.has_departed_once[vehicle] = True
+
         distance = state.distance_to(request)
         total_distance_container[0] += distance
         time = max(self.time + distance / self.problem.truck_speed, request.open) + getattr(request, "service_time", 0.0)
@@ -548,11 +568,19 @@ class soft_Simulation2:
         state.cur_request = request
         state.busy_until = time
 
+        # Lock the vehicle after it completes exactly one full tour (serve then return to depot).
+        if to_depot and self.has_departed_once[vehicle]:
+            self.completed_single_tour[vehicle] = True
+            if state.queue:
+                state.queue.clear()
+
     # Helper adapters to use Program.calc as routing/sequencing rule
     def routing_rule_route_request(self, problem, time: float, vehicles: List[VehicleState], request) -> Optional[int]:
         candidates = []
         fallback_candidates = []
         for i in range(len(vehicles)):
+            if self.completed_single_tour[i]:
+                continue
             cost = vehicles[i].raw_time_cost(problem, request, time)
             ctx = RoutingContext(vehicle_state=vehicles[i], problem=problem, time=time, request=request)
             value = float(self.routing_rule.calc(ctx))
@@ -571,8 +599,7 @@ class soft_Simulation2:
             fallback_candidates.sort(key=lambda x: x[0])
             return fallback_candidates[0][1]
         else:
-            # should not happen if there are vehicles, but return first vehicle as last resort
-            return 0 if len(vehicles) > 0 else None
+            return None
 
     def sequencing_rule_sequence_request(self, problem, time: float, vehicle_state: VehicleState, cache: Dict[int, float]) -> Optional[int]:
         if not vehicle_state.queue:
