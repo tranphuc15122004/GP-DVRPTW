@@ -130,7 +130,7 @@ def heuristics(problem : problem_mod.Problem):
         WIQ = gp_program.Program.terminal(1)
 
     for name, r, s in [("C+C", CR, CS), ("C+W", CR, W), ("WIQ+C", WIQ, CS)]:
-        simulation = sim_mod.soft_Simulation(problem, r, s)
+           simulation = sim_mod.soft_Simulation2(problem, r, s)
         result = simulation.simulate_until(problem.depot.close / NUM_TIME_SLOT, float("inf"))
         log_mod.log(HEU, "heuristic_result", name=name, result=result, fitness=fitness(problem, result))
 
@@ -177,7 +177,7 @@ class Individual:
         if cache_key in cache:
             dist, nb_fail ,total_delay, fit = cache[cache_key]
         else:
-            sim = sim_mod.soft_Simulation(problem, self.routing, self.sequencing)
+                sim = sim_mod.soft_Simulation2(problem, self.routing, self.sequencing)
             
             dist, nb_fail , total_delay = sim.simulate_until(time_slot, float("inf"))
             fit = fitness(problem, (dist, nb_fail , total_delay))
@@ -247,7 +247,7 @@ def gp(problem : problem_mod.Problem):
         )
         
         # tính toán fittness trên toàn bộ dữ liệu cho cá thể tốt nhất
-        sim = sim_mod.soft_Simulation(problem, pop[0].routing, pop[0].sequencing)
+            sim = sim_mod.soft_Simulation2(problem, pop[0].routing, pop[0].sequencing)
         
         full_result = sim.simulate_until(time_slot, float("inf"))
         log_mod.log(GP, "full_result", result=full_result, fitness=fitness(problem, full_result))
