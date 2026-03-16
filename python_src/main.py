@@ -23,6 +23,7 @@ Notes:
 """
 import os
 import sys
+import argparse
 import random
 import importlib.util
 from functools import partial
@@ -90,6 +91,13 @@ CROSSOVER_RATE = float(os.environ.get("CROSSOVER_RATE", "0.8"))
 MUTATION_RATE = float(os.environ.get("MUTATION_RATE", "0.1"))
 TRAIN_FACTOR = float(os.environ.get("TRAIN_FACTOR", "0.2"))
 STRESS_FACTOR = float(os.environ.get("STRESS_FACTOR", "1.0"))
+
+
+def _env_bool(name: str, default: bool) -> bool:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() not in {"0", "false", "no", "off", ""}
 
 
 def fitness(problem, result):
@@ -261,18 +269,35 @@ def gp(problem : problem_mod.Problem):
 
 
 def main():
-    # allow usage: python python_src/main.py <problem path>
-    if len(sys.argv) < 2:
-        print("usage: python main.py [problem path]")
-        sys.exit(1)
-    path = sys.argv[1]
+    parser = argparse.ArgumentParser(description="Run GP-DVRPTW on a CSV scenario")
+    parser.add_argument("scenario_path", help="Path to scenario CSV")
+    parser.add_argument("--num-trucks", type=int, default=int(os.environ.get("PROBLEM_NUM_TRUCKS", "10")))
+    parser.add_argument("--truck-capacity", type=float, default=float(os.environ.get("PROBLEM_TRUCK_CAPACITY", "1300.0")))
+    parser.add_argument("--truck-speed", type=float, default=float(os.environ.get("PROBLEM_TRUCK_SPEED", "1.0")))
+    parser.add_argument("--instance-num", type=int, default=int(os.environ.get("PROBLEM_INSTANCE_NUM", "0")))
+    parser.add_argument(
+        "--no-normalize-inputs",
+        dest="normalize_inputs",
+        action="store_false",
+        help="Disable input normalization",
+    )
+    parser.set_defaults(normalize_inputs=_env_bool("PROBLEM_NORMALIZE_INPUTS", True))
+    args = parser.parse_args()
+
+    path = args.scenario_path
     if not os.path.exists(path):
         # Common invocation: run from within `python_src/` and pass a path like
         # `datasets/...` which actually lives at the repo root.
         alt = os.path.join(PROJECT_ROOT, path)
         if os.path.exists(alt):
             path = alt
-    problem = problem_mod.Problem.load(path, 1.0, 1300.0, 10)
+    problem = problem_mod.Problem.load(
+        path,
+        args.truck_speed,
+        args.truck_capacity,
+        args.num_trucks,
+        normalize_inputs=args.normalize_inputs,
+    )
 
     log_mod.log(MAIN, "start")
 

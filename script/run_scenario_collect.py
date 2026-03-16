@@ -184,6 +184,15 @@ def main() -> int:
         default="auto",
         help="Pin child process to one CPU core index, or 'auto' (default: auto)",
     )
+    parser.add_argument("--num-trucks", type=int, help="Override number of vehicles" , default=10)
+    parser.add_argument("--truck-capacity", type=float, help="Override vehicle capacity" , default= 1300.0)
+    parser.add_argument("--truck-speed", type=float, help="Override vehicle speed" , default=1.0)
+    parser.add_argument("--instance-num", type=int, help="Instance index for tensor datasets" , default= 0)
+    parser.add_argument(
+        "--no-normalize-inputs",
+        action="store_true",
+        help="Disable input normalization in problem loader",
+    )
 
     args = parser.parse_args()
     repo_root = Path(__file__).resolve().parents[1]
@@ -221,6 +230,16 @@ def main() -> int:
     env.update(env_overrides)
 
     cmd = [sys.executable, str(entry_path), str(scenario_path)]
+    if args.num_trucks is not None:
+        cmd.extend(["--num-trucks", str(args.num_trucks)])
+    if args.truck_capacity is not None:
+        cmd.extend(["--truck-capacity", str(args.truck_capacity)])
+    if args.truck_speed is not None:
+        cmd.extend(["--truck-speed", str(args.truck_speed)])
+    if args.instance_num is not None:
+        cmd.extend(["--instance-num", str(args.instance_num)])
+    if args.no_normalize_inputs:
+        cmd.append("--no-normalize-inputs")
     print(f"[runner] start: {' '.join(cmd)}", flush=True)
 
     merged_lines: List[str] = []
