@@ -25,6 +25,7 @@ import os
 import sys
 import random
 import importlib.util
+from contextlib import suppress
 import numpy as np
 from functools import partial
 from typing import List
@@ -130,7 +131,7 @@ def heuristics(problem : problem_mod.Problem):
         WIQ = gp_program.Program.terminal(1)
 
     for name, r, s in [("C+C", CR, CS), ("C+W", CR, W), ("WIQ+C", WIQ, CS)]:
-           simulation = sim_mod.soft_Simulation2(problem, r, s)
+        simulation = sim_mod.soft_Simulation2(problem, r, s)
         result = simulation.simulate_until(problem.depot.close / NUM_TIME_SLOT, float("inf"))
         log_mod.log(HEU, "heuristic_result", name=name, result=result, fitness=fitness(problem, result))
 
@@ -156,8 +157,7 @@ class Individual:
         r_pop = gpc.ramp_half_and_half(context=r_ctx)
         s_pop = gpc.ramp_half_and_half(context=s_ctx)
         out = []
-        for r, s in zip(r_pop, s_pop):
-            out.append(Individual(r, s))
+        out.extend(Individual(r, s) for r, s in zip(r_pop, s_pop))
         return out
 
     def crossover_with(self, gpc, other):
@@ -177,7 +177,7 @@ class Individual:
         if cache_key in cache:
             dist, nb_fail ,total_delay, fit = cache[cache_key]
         else:
-                sim = sim_mod.soft_Simulation2(problem, self.routing, self.sequencing)
+            sim = sim_mod.soft_Simulation2(problem, self.routing, self.sequencing)
             
             dist, nb_fail , total_delay = sim.simulate_until(time_slot, float("inf"))
             fit = fitness(problem, (dist, nb_fail , total_delay))
@@ -200,9 +200,7 @@ def gp(problem : problem_mod.Problem):
 
     # Construct GPContext -- adapt to Python port's constructor
     # allow deterministic runs by setting SEED env var
-    seed_env = os.environ.get("SEED")
-    if not seed_env: seed_env = SEED
-    if seed_env is not None and seed_env != "":
+    if seed_env := (os.environ.get("SEED") or str(SEED)):
         try:
             seed_val = int(seed_env)
         except Exception:
@@ -211,10 +209,7 @@ def gp(problem : problem_mod.Problem):
         seed_val = None
 
     try:
-        if seed_val is not None:
-            rng = random.Random(seed_val)
-        else:
-            rng = random.Random()
+        rng = random.Random(seed_val) if seed_val is not None else random.Random()
         gpc = gp_mod.GPContext(rng=rng, num_population=POP_SIZE, max_depth=MAX_DEPTH)
     except Exception:
         # fallback to attribute style
@@ -247,15 +242,13 @@ def gp(problem : problem_mod.Problem):
         )
         
         # tính toán fittness trên toàn bộ dữ liệu cho cá thể tốt nhất
-            sim = sim_mod.soft_Simulation2(problem, pop[0].routing, pop[0].sequencing)
+        sim = sim_mod.soft_Simulation2(problem, pop[0].routing, pop[0].sequencing)
         
         full_result = sim.simulate_until(time_slot, float("inf"))
         log_mod.log(GP, "full_result", result=full_result, fitness=fitness(problem, full_result))
 
-        try:
+        with suppress(Exception):
             log_mod.log(GP, "base64", routing=pop[0].routing.base64(), sequencing=pop[0].sequencing.base64())
-        except Exception:
-            pass
 
         if gen == NUM_GEN:
             for vehicle in range(problem.num_trucks):
