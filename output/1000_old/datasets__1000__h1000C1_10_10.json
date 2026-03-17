@@ -1,0 +1,92 @@
+{
+  "best_result": {
+    "__": "GP",
+    "_t": 1772269158550510848,
+    "_": "full_result",
+    "result": [
+      11324.828209490888,
+      342
+    ],
+    "fitness": 0.3698878739555422,
+    "gen": 62
+  },
+  "final_generation": {
+    "new_gen": {
+      "__": "GP",
+      "_t": 1772275201904128000,
+      "_": "new_gen",
+      "gen": 100,
+      "result": [
+        12482.511238081332,
+        342
+      ],
+      "fitness": 0.37623482038421785,
+      "routing": "min(mul(TERM0, TERM2), TERM2)",
+      "sequencing": "max(mul(min(TERM2, TERM0), sum(TERM0, TERM0)), sub(sum(sum(TERM3, TERM0), div(TERM3, max(1.0, TERM1))), TERM4))"
+    },
+    "full_result": {
+      "__": "GP",
+      "_t": 1772275203749669120,
+      "_": "full_result",
+      "result": [
+        11324.828209490888,
+        342
+      ],
+      "fitness": 0.3698878739555422,
+      "gen": 100
+    }
+  },
+  "first_three_heuristics": [
+    {
+      "__": "HEU",
+      "_t": 1772262176177155072,
+      "_": "heuristic_result",
+      "name": "C+C",
+      "result": [
+        2626.804850222406,
+        956
+      ],
+      "fitness": 0.8748013423806053
+    },
+    {
+      "__": "HEU",
+      "_t": 1772262176996440832,
+      "_": "heuristic_result",
+      "name": "C+W",
+      "result": [
+        9366.74934985648,
+        917
+      ],
+      "fitness": 0.8766527924882482
+    },
+    {
+      "__": "HEU",
+      "_t": 1772262178004556032,
+      "_": "heuristic_result",
+      "name": "WIQ+C",
+      "result": [
+        1106.283431222948,
+        984
+      ],
+      "fitness": 0.8916651503904768
+    }
+  ],
+  "counts": {
+    "events": 306,
+    "heuristics": 3,
+    "gp_new_gen": 100,
+    "gp_full_result": 100
+  },
+  "meta": {
+    "command": [
+      "/home/admin_wsl/miniconda3/bin/python3",
+      "/home/admin_wsl/GP-DVRPTW/python_src/main.py",
+      "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_10.csv"
+    ],
+    "return_code": 0,
+    "core": 1,
+    "core_mode": "manual",
+    "scenario_path": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_10.csv",
+    "entry": "/home/admin_wsl/GP-DVRPTW/python_src/main.py"
+  }
+}

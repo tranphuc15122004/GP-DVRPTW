@@ -1,0 +1,98 @@
+{
+  "best_result": {
+    "__": "GP",
+    "_t": 1772564459795685888,
+    "_": "full_result",
+    "result": [
+      57.67259745965118,
+      0,
+      37.85848875912959
+    ],
+    "fitness": 95.53108621878077,
+    "gen": 36
+  },
+  "final_generation": {
+    "new_gen": {
+      "__": "GP",
+      "_t": 1772577135758332928,
+      "_": "new_gen",
+      "gen": 100,
+      "result": [
+        29.354433781300216,
+        0,
+        1.0997292115881692
+      ],
+      "fitness": 30.454162992888385,
+      "routing": "mul(sum(sum(div(TERM2, mul(TERM0, div(TERM3, TERM3))), sub(TERM2, mul(TERM0, div(TERM3, TERM2)))), sum(div(TERM2, TERM2), sub(max(TERM4, sum(4.0, TERM3)), sub(TERM4, TERM1)))), TERM2)",
+      "sequencing": "sub(TERM0, min(sum(div(min(mul(TERM5, TERM4), TERM5), TERM4), TERM4), div(div(div(min(TERM5, TERM4), TERM0), TERM0), TERM4)))"
+    },
+    "full_result": {
+      "__": "GP",
+      "_t": 1772577139215318016,
+      "_": "full_result",
+      "result": [
+        57.877567476451034,
+        0,
+        219.55172825521018
+      ],
+      "fitness": 277.4292957316612,
+      "gen": 100
+    }
+  },
+  "first_three_heuristics": [
+    {
+      "__": "HEU",
+      "_t": 1772556513279277056,
+      "_": "heuristic_result",
+      "name": "C+C",
+      "result": [
+        428.50866738122124,
+        0,
+        17117.884263662196
+      ],
+      "fitness": 17546.392931043418
+    },
+    {
+      "__": "HEU",
+      "_t": 1772556523211823872,
+      "_": "heuristic_result",
+      "name": "C+W",
+      "result": [
+        425.60932055153455,
+        0,
+        15744.873941087384
+      ],
+      "fitness": 16170.48326163892
+    },
+    {
+      "__": "HEU",
+      "_t": 1772556538331453184,
+      "_": "heuristic_result",
+      "name": "WIQ+C",
+      "result": [
+        462.9324734622058,
+        0,
+        24703.96805338275
+      ],
+      "fitness": 25166.900526844955
+    }
+  ],
+  "counts": {
+    "events": 306,
+    "heuristics": 3,
+    "gp_new_gen": 100,
+    "gp_full_result": 100
+  },
+  "meta": {
+    "command": [
+      "/home/admin_wsl/miniconda3/bin/python3",
+      "/home/admin_wsl/GP-DVRPTW/python_src/main.py",
+      "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_4.csv"
+    ],
+    "return_code": 0,
+    "core": 14,
+    "core_mode": "manual",
+    "scenario_path": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_4.csv",
+    "entry": "/home/admin_wsl/GP-DVRPTW/python_src/main.py"
+  }
+}

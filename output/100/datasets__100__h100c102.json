@@ -1,0 +1,98 @@
+{
+  "best_result": {
+    "__": "GP",
+    "_t": 1772554609156275968,
+    "_": "full_result",
+    "result": [
+      10.598213874961475,
+      0,
+      3.16123117507334
+    ],
+    "fitness": 13.759445050034815,
+    "gen": 15
+  },
+  "final_generation": {
+    "new_gen": {
+      "__": "GP",
+      "_t": 1772555120721569024,
+      "_": "new_gen",
+      "gen": 100,
+      "result": [
+        9.929137344493132,
+        0,
+        0.04743843026901162
+      ],
+      "fitness": 9.976575774762143,
+      "routing": "sum(sum(sum(sub(sum(min(TERM2, TERM3), TERM4), TERM4), sub(TERM3, TERM4)), mul(sum(sum(TERM0, min(TERM2, TERM2)), TERM4), sub(TERM4, TERM0))), div(min(sum(sum(sub(TERM0, TERM4), sum(TERM3, TERM2)), mul(max(TERM1, TERM0), sub(TERM3, TERM0))), min(TERM2, TERM0)), sub(sum(sum(sub(TERM0, TERM4), sum(TERM3, TERM2)), mul(max(TERM1, TERM0), sub(TERM3, TERM0))), sub(TERM3, TERM1))))",
+      "sequencing": "max(mul(sum(sum(sub(TERM1, mul(TERM3, TERM2)), TERM4), mul(TERM0, TERM0)), div(sum(TERM5, min(min(TERM5, TERM4), div(-1.0, TERM4))), sum(TERM1, TERM1))), min(sum(TERM0, min(TERM5, mul(max(TERM4, TERM1), TERM1))), sum(TERM0, min(TERM1, mul(div(TERM5, TERM5), TERM1)))))"
+    },
+    "full_result": {
+      "__": "GP",
+      "_t": 1772555120770221056,
+      "_": "full_result",
+      "result": [
+        10.978258499700075,
+        0,
+        4.221530307236282
+      ],
+      "fitness": 15.199788806936358,
+      "gen": 100
+    }
+  },
+  "first_three_heuristics": [
+    {
+      "__": "HEU",
+      "_t": 1772554549977629952,
+      "_": "heuristic_result",
+      "name": "C+C",
+      "result": [
+        22.930858122001414,
+        0,
+        52.82059643344342
+      ],
+      "fitness": 75.75145455544484
+    },
+    {
+      "__": "HEU",
+      "_t": 1772554550000473088,
+      "_": "heuristic_result",
+      "name": "C+W",
+      "result": [
+        27.254411518904273,
+        0,
+        32.9890242294239
+      ],
+      "fitness": 60.24343574832817
+    },
+    {
+      "__": "HEU",
+      "_t": 1772554550052196096,
+      "_": "heuristic_result",
+      "name": "WIQ+C",
+      "result": [
+        37.935562762787484,
+        0,
+        178.4044793223177
+      ],
+      "fitness": 216.3400420851052
+    }
+  ],
+  "counts": {
+    "events": 306,
+    "heuristics": 3,
+    "gp_new_gen": 100,
+    "gp_full_result": 100
+  },
+  "meta": {
+    "command": [
+      "/home/admin_wsl/miniconda3/bin/python3",
+      "/home/admin_wsl/GP-DVRPTW/python_src/main.py",
+      "/home/admin_wsl/GP-DVRPTW/datasets/100/h100c102.csv"
+    ],
+    "return_code": 0,
+    "core": 1,
+    "core_mode": "manual",
+    "scenario_path": "/home/admin_wsl/GP-DVRPTW/datasets/100/h100c102.csv",
+    "entry": "/home/admin_wsl/GP-DVRPTW/python_src/main.py"
+  }
+}

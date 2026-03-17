@@ -1,0 +1,92 @@
+{
+  "best_result": {
+    "__": "GP",
+    "_t": 1772261837601451008,
+    "_": "full_result",
+    "result": [
+      1031.530332576838,
+      20
+    ],
+    "fitness": 0.22298043052403493,
+    "gen": 85
+  },
+  "final_generation": {
+    "new_gen": {
+      "__": "GP",
+      "_t": 1772261880631522816,
+      "_": "new_gen",
+      "gen": 100,
+      "result": [
+        1148.6659904482956,
+        5
+      ],
+      "fitness": 0.09286108293534566,
+      "routing": "max(div(min(max(mul(TERM4, sub(TERM3, TERM0)), min(TERM2, TERM2)), max(TERM4, sum(sum(TERM0, TERM3), TERM4))), max(max(max(TERM0, TERM4), sum(TERM1, -1.0)), sum(TERM1, TERM3))), mul(sub(div(TERM2, TERM4), TERM4), TERM0))",
+      "sequencing": "mul(mul(TERM0, sum(sum(TERM2, sum(min(TERM0, TERM0), TERM0)), sum(max(sub(TERM3, TERM0), TERM2), mul(TERM0, TERM2)))), sum(TERM3, sum(max(min(sub(TERM5, TERM0), mul(TERM0, -4.0)), TERM2), TERM0)))"
+    },
+    "full_result": {
+      "__": "GP",
+      "_t": 1772261880669661952,
+      "_": "full_result",
+      "result": [
+        1018.8748734622047,
+        34
+      ],
+      "fitness": 0.3484531197275919,
+      "gen": 100
+    }
+  },
+  "first_three_heuristics": [
+    {
+      "__": "HEU",
+      "_t": 1772261564891796224,
+      "_": "heuristic_result",
+      "name": "C+C",
+      "result": [
+        238.6032377989511,
+        85
+      ],
+      "fitness": 0.7749418015749563
+    },
+    {
+      "__": "HEU",
+      "_t": 1772261564906368000,
+      "_": "heuristic_result",
+      "name": "C+W",
+      "result": [
+        424.7166035082495,
+        82
+      ],
+      "fitness": 0.755696525146177
+    },
+    {
+      "__": "HEU",
+      "_t": 1772261564920876032,
+      "_": "heuristic_result",
+      "name": "WIQ+C",
+      "result": [
+        51.82557937317008,
+        96
+      ],
+      "fitness": 0.8661593991405487
+    }
+  ],
+  "counts": {
+    "events": 306,
+    "heuristics": 3,
+    "gp_new_gen": 100,
+    "gp_full_result": 100
+  },
+  "meta": {
+    "command": [
+      "/home/admin_wsl/miniconda3/bin/python3",
+      "/home/admin_wsl/GP-DVRPTW/python_src/main.py",
+      "/home/admin_wsl/GP-DVRPTW/datasets/100/h100rc102.csv"
+    ],
+    "return_code": 0,
+    "core": 13,
+    "core_mode": "manual",
+    "scenario_path": "/home/admin_wsl/GP-DVRPTW/datasets/100/h100rc102.csv",
+    "entry": "/home/admin_wsl/GP-DVRPTW/python_src/main.py"
+  }
+}

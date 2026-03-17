@@ -1,0 +1,92 @@
+{
+  "best_result": {
+    "__": "GP",
+    "_t": 1772261298962045952,
+    "_": "full_result",
+    "result": [
+      1741.3992182593202,
+      3
+    ],
+    "fitness": 0.041088990438991266,
+    "gen": 9
+  },
+  "final_generation": {
+    "new_gen": {
+      "__": "GP",
+      "_t": 1772261656167721984,
+      "_": "new_gen",
+      "gen": 100,
+      "result": [
+        684.7860037160779,
+        0
+      ],
+      "fitness": 0.005540339835890598,
+      "routing": "sum(min(sum(TERM0, mul(TERM3, TERM1)), TERM2), sum(TERM3, mul(TERM2, TERM4)))",
+      "sequencing": "mul(TERM0, sum(sum(TERM2, TERM0), TERM1))"
+    },
+    "full_result": {
+      "__": "GP",
+      "_t": 1772261656193008896,
+      "_": "full_result",
+      "result": [
+        751.9989559235463,
+        7
+      ],
+      "fitness": 0.06908413394760152,
+      "gen": 100
+    }
+  },
+  "first_three_heuristics": [
+    {
+      "__": "HEU",
+      "_t": 1772261268382386944,
+      "_": "heuristic_result",
+      "name": "C+C",
+      "result": [
+        404.92517448583345,
+        53
+      ],
+      "fitness": 0.4802760936447074
+    },
+    {
+      "__": "HEU",
+      "_t": 1772261268412930048,
+      "_": "heuristic_result",
+      "name": "C+W",
+      "result": [
+        877.7092696974546,
+        33
+      ],
+      "fitness": 0.3041012076836364
+    },
+    {
+      "__": "HEU",
+      "_t": 1772261268440674048,
+      "_": "heuristic_result",
+      "name": "WIQ+C",
+      "result": [
+        251.22352271615608,
+        74
+      ],
+      "fitness": 0.6680325527727845
+    }
+  ],
+  "counts": {
+    "events": 306,
+    "heuristics": 3,
+    "gp_new_gen": 100,
+    "gp_full_result": 100
+  },
+  "meta": {
+    "command": [
+      "/home/admin_wsl/miniconda3/bin/python3",
+      "/home/admin_wsl/GP-DVRPTW/python_src/main.py",
+      "/home/admin_wsl/GP-DVRPTW/datasets/100/h100c104.csv"
+    ],
+    "return_code": 0,
+    "core": 3,
+    "core_mode": "manual",
+    "scenario_path": "/home/admin_wsl/GP-DVRPTW/datasets/100/h100c104.csv",
+    "entry": "/home/admin_wsl/GP-DVRPTW/python_src/main.py"
+  }
+}

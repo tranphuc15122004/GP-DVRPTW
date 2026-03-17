@@ -1,0 +1,106 @@
+{
+  "best_result": {
+    "__": "GP",
+    "_t": 1773677577909946880,
+    "_": "full_result",
+    "result": [
+      18.259219501098833,
+      0,
+      51.485415006888466
+    ],
+    "fitness": 69.7446345079873,
+    "gen": 12
+  },
+  "final_generation": {
+    "new_gen": {
+      "__": "GP",
+      "_t": 1773677730229051136,
+      "_": "new_gen",
+      "gen": 100,
+      "result": [
+        17.696494368763194,
+        0,
+        68.4606735879954
+      ],
+      "fitness": 86.1571679567586,
+      "routing": "mul(mul(mul(TERM2, TERM0), max(TERM0, sub(TERM2, sub(min(TERM2, TERM0), min(TERM2, TERM2))))), max(TERM0, sub(mul(sub(min(TERM2, TERM0), min(TERM2, TERM2)), TERM2), TERM4)))",
+      "sequencing": "TERM0"
+    },
+    "full_result": {
+      "__": "GP",
+      "_t": 1773677730314123008,
+      "_": "full_result",
+      "result": [
+        18.80736274728126,
+        0,
+        52.37804104948354
+      ],
+      "fitness": 71.1854037967648,
+      "gen": 100
+    }
+  },
+  "first_three_heuristics": [
+    {
+      "__": "HEU",
+      "_t": 1773677505902651136,
+      "_": "heuristic_result",
+      "name": "C+C",
+      "result": [
+        64.07389118255678,
+        15,
+        372.29682147516877
+      ],
+      "fitness": 466.37071265772556
+    },
+    {
+      "__": "HEU",
+      "_t": 1773677505979142912,
+      "_": "heuristic_result",
+      "name": "C+W",
+      "result": [
+        72.39684365728053,
+        7,
+        378.0996855067023
+      ],
+      "fitness": 464.4965291639828
+    },
+    {
+      "__": "HEU",
+      "_t": 1773677506140593920,
+      "_": "heuristic_result",
+      "name": "WIQ+C",
+      "result": [
+        38.90946295393924,
+        123,
+        294.3977306855881
+      ],
+      "fitness": 579.3071936395273
+    }
+  ],
+  "counts": {
+    "events": 306,
+    "heuristics": 3,
+    "gp_new_gen": 100,
+    "gp_full_result": 100
+  },
+  "meta": {
+    "command": [
+      "/home/admin_wsl/miniconda3/bin/python3",
+      "/home/admin_wsl/GP-DVRPTW/python_src/main.py",
+      "/home/admin_wsl/GP-DVRPTW/datasets/h200/h200c110.csv",
+      "--num-trucks",
+      "10",
+      "--truck-capacity",
+      "1300.0",
+      "--truck-speed",
+      "1.0",
+      "--instance-num",
+      "0"
+    ],
+    "return_code": 0,
+    "core": 9,
+    "core_mode": "manual",
+    "scenario_path": "/home/admin_wsl/GP-DVRPTW/datasets/h200/h200c110.csv",
+    "entry": "/home/admin_wsl/GP-DVRPTW/python_src/main.py"
+  }
+}

@@ -1,0 +1,587 @@
+{
+  "meta": {
+    "timestamp": "2026-03-17T02:00:15",
+    "total": 60,
+    "ok": 60,
+    "failed": 0,
+    "core_mode": "balanced",
+    "cores": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "max_parallel": 30,
+    "retries": 1
+  },
+  "results": [
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c101.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 0,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c101.json",
+      "return_code": 0,
+      "elapsed_sec": 2869.55
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c102.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 1,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c102.json",
+      "return_code": 0,
+      "elapsed_sec": 4163.49
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c103.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 2,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c103.json",
+      "return_code": 0,
+      "elapsed_sec": 2666.472
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c104.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 3,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c104.json",
+      "return_code": 0,
+      "elapsed_sec": 4386.074
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c105.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 4,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c105.json",
+      "return_code": 0,
+      "elapsed_sec": 3921.677
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c106.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 5,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c106.json",
+      "return_code": 0,
+      "elapsed_sec": 1695.847
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c107.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 6,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c107.json",
+      "return_code": 0,
+      "elapsed_sec": 2468.806
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c108.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 7,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c108.json",
+      "return_code": 0,
+      "elapsed_sec": 1827.81
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c109.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 8,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c109.json",
+      "return_code": 0,
+      "elapsed_sec": 1828.41
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c110.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 9,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c110.json",
+      "return_code": 0,
+      "elapsed_sec": 896.581
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c201.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 10,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c201.json",
+      "return_code": 0,
+      "elapsed_sec": 1125.08
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c202.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 11,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c202.json",
+      "return_code": 0,
+      "elapsed_sec": 3418.053
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c203.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 12,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c203.json",
+      "return_code": 0,
+      "elapsed_sec": 4431.895
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c204.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 13,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c204.json",
+      "return_code": 0,
+      "elapsed_sec": 4520.961
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c205.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 14,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c205.json",
+      "return_code": 0,
+      "elapsed_sec": 980.69
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c206.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 15,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c206.json",
+      "return_code": 0,
+      "elapsed_sec": 1923.302
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c207.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 16,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c207.json",
+      "return_code": 0,
+      "elapsed_sec": 2651.636
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c208.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 17,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c208.json",
+      "return_code": 0,
+      "elapsed_sec": 2960.032
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c209.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 18,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c209.json",
+      "return_code": 0,
+      "elapsed_sec": 1143.502
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400c210.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 19,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400c210.json",
+      "return_code": 0,
+      "elapsed_sec": 1771.52
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r101.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 20,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r101.json",
+      "return_code": 0,
+      "elapsed_sec": 2243.522
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r102.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 21,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r102.json",
+      "return_code": 0,
+      "elapsed_sec": 3972.3
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r103.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 22,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r103.json",
+      "return_code": 0,
+      "elapsed_sec": 2492.411
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r104.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 23,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r104.json",
+      "return_code": 0,
+      "elapsed_sec": 964.667
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r105.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 24,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r105.json",
+      "return_code": 0,
+      "elapsed_sec": 1386.222
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r106.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 25,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r106.json",
+      "return_code": 0,
+      "elapsed_sec": 5291.75
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r107.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 26,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r107.json",
+      "return_code": 0,
+      "elapsed_sec": 3300.68
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r108.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 27,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r108.json",
+      "return_code": 0,
+      "elapsed_sec": 1796.145
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r109.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 28,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r109.json",
+      "return_code": 0,
+      "elapsed_sec": 4194.284
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r110.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 29,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r110.json",
+      "return_code": 0,
+      "elapsed_sec": 970.264
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r201.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 9,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r201.json",
+      "return_code": 0,
+      "elapsed_sec": 2098.905
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r202.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 23,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r202.json",
+      "return_code": 0,
+      "elapsed_sec": 1614.475
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r203.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 29,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r203.json",
+      "return_code": 0,
+      "elapsed_sec": 4111.509
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r204.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 14,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r204.json",
+      "return_code": 0,
+      "elapsed_sec": 3245.832
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r205.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 10,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r205.json",
+      "return_code": 0,
+      "elapsed_sec": 1251.204
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r206.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 18,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r206.json",
+      "return_code": 0,
+      "elapsed_sec": 3367.648
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r207.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 24,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r207.json",
+      "return_code": 0,
+      "elapsed_sec": 4881.877
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r208.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 5,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r208.json",
+      "return_code": 0,
+      "elapsed_sec": 5352.177
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r209.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 19,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r209.json",
+      "return_code": 0,
+      "elapsed_sec": 1607.473
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400r210.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 27,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400r210.json",
+      "return_code": 0,
+      "elapsed_sec": 2624.925
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc101.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 7,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc101.json",
+      "return_code": 0,
+      "elapsed_sec": 2031.995
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc102.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 8,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc102.json",
+      "return_code": 0,
+      "elapsed_sec": 4222.545
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc103.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 15,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc103.json",
+      "return_code": 0,
+      "elapsed_sec": 3258.165
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc104.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 20,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc104.json",
+      "return_code": 0,
+      "elapsed_sec": 2052.653
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc105.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 10,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc105.json",
+      "return_code": 0,
+      "elapsed_sec": 831.692
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc106.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 6,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc106.json",
+      "return_code": 0,
+      "elapsed_sec": 921.82
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc107.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 22,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc107.json",
+      "return_code": 0,
+      "elapsed_sec": 1869.617
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc108.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 23,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc108.json",
+      "return_code": 0,
+      "elapsed_sec": 1428.985
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc109.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 16,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc109.json",
+      "return_code": 0,
+      "elapsed_sec": 2988.265
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc110.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 2,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc110.json",
+      "return_code": 0,
+      "elapsed_sec": 1691.978
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc201.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 0,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc201.json",
+      "return_code": 0,
+      "elapsed_sec": 932.391
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc202.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 17,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc202.json",
+      "return_code": 0,
+      "elapsed_sec": 910.366
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc203.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 9,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc203.json",
+      "return_code": 0,
+      "elapsed_sec": 3531.667
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc204.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 10,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc204.json",
+      "return_code": 0,
+      "elapsed_sec": 4394.175
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc205.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 26,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc205.json",
+      "return_code": 0,
+      "elapsed_sec": 3187.213
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc206.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 19,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc206.json",
+      "return_code": 0,
+      "elapsed_sec": 2426.482
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc207.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 6,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc207.json",
+      "return_code": 0,
+      "elapsed_sec": 3807.371
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc208.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 11,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc208.json",
+      "return_code": 0,
+      "elapsed_sec": 2751.179
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc209.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 0,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc209.json",
+      "return_code": 0,
+      "elapsed_sec": 1425.984
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/h400/h400rc210.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 7,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__h400__h400rc210.json",
+      "return_code": 0,
+      "elapsed_sec": 1750.282
+    }
+  ]
+}

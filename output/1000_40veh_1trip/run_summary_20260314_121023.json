@@ -1,0 +1,587 @@
+{
+  "meta": {
+    "timestamp": "2026-03-14T12:10:23",
+    "total": 60,
+    "ok": 60,
+    "failed": 0,
+    "core_mode": "balanced",
+    "cores": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "max_parallel": 30,
+    "retries": 1
+  },
+  "results": [
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_1.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 0,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C1_10_1.json",
+      "return_code": 0,
+      "elapsed_sec": 28658.349
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_10.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 1,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C1_10_10.json",
+      "return_code": 0,
+      "elapsed_sec": 23014.844
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_2.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 2,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C1_10_2.json",
+      "return_code": 0,
+      "elapsed_sec": 27971.355
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_3.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 3,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C1_10_3.json",
+      "return_code": 0,
+      "elapsed_sec": 19830.284
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_4.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 4,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C1_10_4.json",
+      "return_code": 0,
+      "elapsed_sec": 40561.527
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_5.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 5,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C1_10_5.json",
+      "return_code": 0,
+      "elapsed_sec": 26273.778
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_6.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 6,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C1_10_6.json",
+      "return_code": 0,
+      "elapsed_sec": 22685.884
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_7.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 7,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C1_10_7.json",
+      "return_code": 0,
+      "elapsed_sec": 16847.637
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_8.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 8,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C1_10_8.json",
+      "return_code": 0,
+      "elapsed_sec": 29684.694
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C1_10_9.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 9,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C1_10_9.json",
+      "return_code": 0,
+      "elapsed_sec": 7958.698
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_1.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 10,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C2_10_1.json",
+      "return_code": 0,
+      "elapsed_sec": 24087.682
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_10.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 11,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C2_10_10.json",
+      "return_code": 0,
+      "elapsed_sec": 18912.185
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_2.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 12,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C2_10_2.json",
+      "return_code": 0,
+      "elapsed_sec": 35985.09
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_3.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 13,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C2_10_3.json",
+      "return_code": 0,
+      "elapsed_sec": 33755.337
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_4.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 14,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C2_10_4.json",
+      "return_code": 0,
+      "elapsed_sec": 21632.675
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_5.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 15,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C2_10_5.json",
+      "return_code": 0,
+      "elapsed_sec": 38758.129
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_6.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 16,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C2_10_6.json",
+      "return_code": 0,
+      "elapsed_sec": 22516.303
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_7.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 17,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C2_10_7.json",
+      "return_code": 0,
+      "elapsed_sec": 21104.1
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_8.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 18,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C2_10_8.json",
+      "return_code": 0,
+      "elapsed_sec": 29974.466
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000C2_10_9.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 19,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000C2_10_9.json",
+      "return_code": 0,
+      "elapsed_sec": 26422.724
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R1_10_1.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 20,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R1_10_1.json",
+      "return_code": 0,
+      "elapsed_sec": 28509.769
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R1_10_10.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 21,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R1_10_10.json",
+      "return_code": 0,
+      "elapsed_sec": 26371.669
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R1_10_2.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 22,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R1_10_2.json",
+      "return_code": 0,
+      "elapsed_sec": 9564.792
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R1_10_3.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 23,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R1_10_3.json",
+      "return_code": 0,
+      "elapsed_sec": 26846.387
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R1_10_4.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 24,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R1_10_4.json",
+      "return_code": 0,
+      "elapsed_sec": 31368.659
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R1_10_5.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 25,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R1_10_5.json",
+      "return_code": 0,
+      "elapsed_sec": 25983.83
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R1_10_6.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 26,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R1_10_6.json",
+      "return_code": 0,
+      "elapsed_sec": 24670.765
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R1_10_7.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 27,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R1_10_7.json",
+      "return_code": 0,
+      "elapsed_sec": 27842.186
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R1_10_8.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 28,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R1_10_8.json",
+      "return_code": 0,
+      "elapsed_sec": 33963.367
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R1_10_9.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 29,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R1_10_9.json",
+      "return_code": 0,
+      "elapsed_sec": 27544.631
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R2_10_1.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 9,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R2_10_1.json",
+      "return_code": 0,
+      "elapsed_sec": 22546.772
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R2_10_10.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 22,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R2_10_10.json",
+      "return_code": 0,
+      "elapsed_sec": 26037.889
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R2_10_2.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 7,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R2_10_2.json",
+      "return_code": 0,
+      "elapsed_sec": 11767.665
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R2_10_3.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 11,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R2_10_3.json",
+      "return_code": 0,
+      "elapsed_sec": 29427.784
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R2_10_4.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 3,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R2_10_4.json",
+      "return_code": 0,
+      "elapsed_sec": 25158.838
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R2_10_5.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 17,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R2_10_5.json",
+      "return_code": 0,
+      "elapsed_sec": 29080.928
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R2_10_6.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 14,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R2_10_6.json",
+      "return_code": 0,
+      "elapsed_sec": 15908.744
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R2_10_7.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 16,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R2_10_7.json",
+      "return_code": 0,
+      "elapsed_sec": 27755.998
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R2_10_8.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 6,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R2_10_8.json",
+      "return_code": 0,
+      "elapsed_sec": 26700.27
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000R2_10_9.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 1,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000R2_10_9.json",
+      "return_code": 0,
+      "elapsed_sec": 20189.779
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC1_10_1.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 10,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC1_10_1.json",
+      "return_code": 0,
+      "elapsed_sec": 19487.854
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC1_10_10.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 26,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC1_10_10.json",
+      "return_code": 0,
+      "elapsed_sec": 12002.038
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC1_10_2.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 25,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC1_10_2.json",
+      "return_code": 0,
+      "elapsed_sec": 18459.024
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC1_10_3.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 5,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC1_10_3.json",
+      "return_code": 0,
+      "elapsed_sec": 5764.881
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC1_10_4.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 21,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC1_10_4.json",
+      "return_code": 0,
+      "elapsed_sec": 16577.922
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC1_10_5.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 19,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC1_10_5.json",
+      "return_code": 0,
+      "elapsed_sec": 20769.141
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC1_10_6.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 23,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC1_10_6.json",
+      "return_code": 0,
+      "elapsed_sec": 27360.416
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC1_10_7.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 29,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC1_10_7.json",
+      "return_code": 0,
+      "elapsed_sec": 24047.224
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC1_10_8.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 27,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC1_10_8.json",
+      "return_code": 0,
+      "elapsed_sec": 18657.724
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC1_10_9.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 2,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC1_10_9.json",
+      "return_code": 0,
+      "elapsed_sec": 16916.084
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC2_10_1.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 20,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC2_10_1.json",
+      "return_code": 0,
+      "elapsed_sec": 27486.959
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC2_10_10.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 7,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC2_10_10.json",
+      "return_code": 0,
+      "elapsed_sec": 19642.801
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC2_10_2.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 0,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC2_10_2.json",
+      "return_code": 0,
+      "elapsed_sec": 20940.028
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC2_10_3.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 8,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC2_10_3.json",
+      "return_code": 0,
+      "elapsed_sec": 23285.004
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC2_10_4.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 18,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC2_10_4.json",
+      "return_code": 0,
+      "elapsed_sec": 19903.398
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC2_10_5.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 9,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC2_10_5.json",
+      "return_code": 0,
+      "elapsed_sec": 16226.239
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC2_10_6.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 24,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC2_10_6.json",
+      "return_code": 0,
+      "elapsed_sec": 17111.423
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC2_10_7.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 5,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC2_10_7.json",
+      "return_code": 0,
+      "elapsed_sec": 19084.584
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC2_10_8.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 13,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC2_10_8.json",
+      "return_code": 0,
+      "elapsed_sec": 21214.127
+    },
+    {
+      "scenario": "/home/admin_wsl/GP-DVRPTW/datasets/1000/h1000RC2_10_9.csv",
+      "status": "OK",
+      "attempts": 1,
+      "core": 28,
+      "output": "/home/admin_wsl/GP-DVRPTW/output/datasets__1000__h1000RC2_10_9.json",
+      "return_code": 0,
+      "elapsed_sec": 13965.463
+    }
+  ]
+}
